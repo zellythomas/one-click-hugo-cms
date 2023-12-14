@@ -1,13 +1,24 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+<div class="ph3 bg-off-white">
+	<div class="center mw6 pv3">
 
-{{ partial "short-text" .Params.blurb}}
+		<img src="{{ .Params.logo }}" alt="" class="db w4 center pv4">
 
-{{ partial "2-up" .Params }}
+		{{ .Content }}
 
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
+		<div class="flex-ns mb3">
+	        	{{ range .Params.contact_entries }}
+				<div>
+					<h4 class="f4 b lh-title mb2 primary">{{ .heading }}</h4>
+					<p>{{ .text }}</p>
+				</div>
+			{{ end }}
+		</div>
 
-{{ partial "blog" . }}
+		{{ partial "contact-form" . }}
+
+	</div>
+</div>
 
 {{ end }}
