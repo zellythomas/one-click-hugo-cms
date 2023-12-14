@@ -1,5 +1,5 @@
 ---
-title: " "
+title: Kai Music & Arts
 subtitle: " "
 image: /img/home-jumbotron.jpg
 blurb:
